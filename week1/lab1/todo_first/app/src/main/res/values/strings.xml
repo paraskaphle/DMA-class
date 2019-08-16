@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">todo_first</string>
+    <string name="textview">TextView</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string-array name="tasks">
+        <item>football</item>
+        <item>cricket</item>
+        <item>basketball</item>
+        <item>volleyball</item>
+        <item>table tennis</item>
+    </string-array>
+</resources>
