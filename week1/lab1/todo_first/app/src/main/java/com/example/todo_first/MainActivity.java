@@ -2,10 +2,12 @@ package com.example.todo_first;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     //    ={"play cricket", "study","dinner","sleep"};
     private TextView textView;
     int currentIndex= 0;
+    public static final String TODO_INDEX = "com.example.todoIndex";
+    private Button buttonDetail;
 
     @Override
     protected void onStart() {
@@ -70,6 +74,16 @@ public class MainActivity extends AppCompatActivity {
         textView=findViewById(R.id.textView);
         textView.setText(tasks[currentIndex]);
 
+        buttonDetail=findViewById(R.id.btn_detail);
+        buttonDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(MainActivity.this, todo_detail.class);
+                intent.putExtra(TODO_INDEX,currentIndex);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void nextClick(View view) {
@@ -81,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentIndex > 0){
             currentIndex = currentIndex % tasks.length;
         } else{
-            currentIndex = tasks.length-1;
+            currentIndex = tasks.length;
         }
         currentIndex = --currentIndex % tasks.length;
         textView.setText(tasks[currentIndex]);

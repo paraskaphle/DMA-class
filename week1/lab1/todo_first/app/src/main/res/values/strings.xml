@@ -11,4 +11,12 @@
         <item>volleyball</item>
         <item>table tennis</item>
     </string-array>
+
+    <string-array name="details">
+        <item>play football</item>
+        <item>you can play cricket</item>
+        <item>welcome to the game basketball</item>
+        <item>this game is volleyball</item>
+        <item>this game is so cool.</item>
+    </string-array>
 </resources>
